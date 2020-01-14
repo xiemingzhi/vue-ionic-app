@@ -1,24 +1,24 @@
 <template>
   <ion-page>
+    
     <ion-header>
-
-      <ion-toolbar class="toolbar-md-primary">
+      <ion-toolbar class="toolbar-md-primary" color="primary">
         <ion-title>TodoList</ion-title>
       </ion-toolbar>
-
     </ion-header>
-    <ion-content class="content">
-
+    
+    <!-- <ion-content class="content"> -->
       <ion-list>
         <ion-item v-for="todo in todos" :key="todo.id">
-          {{todo.title}}
+          <ion-label>{{todo.title}}</ion-label>
         </ion-item>
       </ion-list>
 
       <ion-fab-button class="todo-fab" @click="addTodo">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
-    </ion-content>
+    <!-- </ion-content> -->
+
   </ion-page>
 </template>
 
@@ -39,7 +39,11 @@ export default {
   created() {
     axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
       .then(res => this.todos = res.data)
-  }
+  },
+  mounted () {
+    // eslint-disable-next-line no-console
+    console.log('todos length', this.todos.length)
+  },
 }</script>
 
 <style lang="scss" scoped>

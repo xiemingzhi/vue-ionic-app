@@ -1,18 +1,30 @@
 # vue-ionic
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
+## Project setup
+```
 npm install
+npm install @ionic/core @ionic/vue vue-router
+npm install axios
+npm install -D webpack 
+npm install -D sass-loader
+npm install -D node-sass
+npm install ionicons@4.5.9-1 --save-dev
+```
 
-# serve with hot reload at localhost:8080
-npm run dev
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-# build for production with minification
+### Compiles and minifies for production
+```
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

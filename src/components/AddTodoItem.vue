@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header class="toolbar-md-primary">
 
-      <ion-toolbar>
+      <ion-toolbar color="primary">
         <ion-title>Add Item</ion-title>
       </ion-toolbar>
 
@@ -35,6 +35,8 @@ export default {
       const newTodo = { name: this.name }
       axios.post('https://jsonplaceholder.typicode.com/todos', newTodo)
         .then(res => {
+          // eslint-disable-next-line no-console
+          console.log('addtodo', res)
           this.$router.push({path: '/todos'})
         })
     },
@@ -46,5 +48,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.todo-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 15px;
+  font-size: 30px;
+}
 </style>

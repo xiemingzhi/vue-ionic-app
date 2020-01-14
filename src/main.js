@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import IonicVue from '@ionic/vue';
+import '@ionic/core/css/core.css';
+import '@ionic/core/css/ionic.bundle.css';
 
-Vue.config.ignoredElements = [/^ion-/]
+
+Vue.config.productionTip = false;
+
+Vue.use(IonicVue);
 
 new Vue({
-  el: '#app',
   router,
-  render: h => h(App)
-})
+  render: h => h(App),
+}).$mount('#app')
