@@ -2,12 +2,14 @@
   <ion-page>
     
     <ion-header>
-      <ion-toolbar class="toolbar-md-primary" color="primary">
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
         <ion-title>TodoList</ion-title>
       </ion-toolbar>
     </ion-header>
-    
-    <!-- <ion-content class="content"> -->
+    <ion-content>
       <ion-list>
         <ion-item v-for="todo in todos" :key="todo.id">
           <ion-label>{{todo.title}}</ion-label>
@@ -17,8 +19,7 @@
       <ion-fab-button class="todo-fab" @click="addTodo">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
-    <!-- </ion-content> -->
-
+    </ion-content>
   </ion-page>
 </template>
 

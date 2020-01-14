@@ -3,6 +3,9 @@
     <ion-header class="toolbar-md-primary">
 
       <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/"></ion-back-button>
+        </ion-buttons>
         <ion-title>Add Item</ion-title>
       </ion-toolbar>
 

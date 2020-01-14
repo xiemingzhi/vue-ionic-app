@@ -1,20 +1,25 @@
 <template>
-  <!-- <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div> -->
-  <ion-app>
-    <router-view></router-view>
-  </ion-app>
+  <div id="app">
+    <!-- <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <ion-app>
+      <ion-split-pane contentId="mycontent">
+        <Menu/>
+        <ion-vue-router main id="mycontent"/>
+      </ion-split-pane>
+    </ion-app>
+  </div>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
+import Menu from "./components/Menu.vue";
 
 export default {
   name: 'app',
   components: {
     //HelloWorld
+    Menu
   }
 }
 </script>
