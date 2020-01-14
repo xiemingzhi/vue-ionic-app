@@ -10,7 +10,25 @@ Vue.use(IonicVueRouter);
 const routes = [
   { path: '/todos', component: TodoList },
   { path: '/todos/add', component: AddTodoItem},
-  { path: '/', redirect: '/todos'}
+  {
+    path: '/tabs',
+    component: () => import('@/views/Tabs.vue'),
+    children: [
+      { 
+        path: 'todos', 
+        name: 'todos',
+        //component: TodoList 
+        components: { session: () => import('@/components/TodoList.vue') }
+      },
+      { 
+        path: 'todos/add', 
+        name: 'todos-add',
+        //component: AddTodoItem
+        components: { session: () => import('@/components/AddTodoItem.vue') }
+      }
+    ]
+  },
+  { path: '/', redirect: 'tabs/todos'}
 ]
 
 export default new IonicVueRouter({ 
